@@ -27,28 +27,40 @@
             <span class="js-score">2</span>/5</p>
     </section>
 
-    <section class="feedback">
-        <p class="correct">CORRECT</p>
-        <p class="extra">Extra information about answer choice.</p>
-    </section>
+
 
 
     <main>
-        <form action="">
+        <form id="main-form" action="">
             <fieldset>
                 <legend>
                     Who has the most followers?
                 </legend>
-                <label for="a" />
-                <input name="answerChoice" value="a" id="a" type="radio" />
-                <label for="b" />
-                <input name="answerChoice" value="b" id="a" type="radio" />
-                <label for="c" />
-                <input name="answerChoice" value="c" id="a" type="radio" />
-                <label for="d" />
-                <input name="answerChoice" value="d" id="a" type="radio" />
+                <div id="option-container-a">
+                    <label for="a" />
+                    <input name="answerChoice" value="a" id="a" type="radio">
+                    <div class="hidden">CORRECT</div>
+                </div>
 
-                <button type="submit" value="submit" class="submit-btn" />
+                </div>
+                <div id="option-container-b">
+                    <label for="b" />
+                    <input name="answerChoice" value="b" id="a" type="radio">
+                </div>
+                <div id="option-container-c">
+                    <label for="c" />
+                    <input name="answerChoice" value="c" id="a" type="radio">
+                </div>
+
+                <div id="option-container-c">
+
+                    <label for="d" />
+                    <input name="answerChoice" value="d" id="a" type="radio" />
+                </div>
+
+                <button type="submit" value="submit" class="js-next-submit-btn">
+
+                </button>
             </fieldset>
 
         </form>
