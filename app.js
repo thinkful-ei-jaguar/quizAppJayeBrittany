@@ -64,11 +64,9 @@ const store = {
   ],
   questionNumber: 0,
   score: 0,
-  quizStarted: false,
   answered: false,
-  currentCorrectAnswer: null,
   correct: null,
-  answerChoice = null
+  answerChoice: null
 };
 
 /**
@@ -96,7 +94,7 @@ function generateResultsPage() {
 </header>
 <section>
 <p>Your Score:
-<span class="final-score">6</span>/10</p>
+<span class="final-score">${store.score}</span>/5</p>
 </section>
 <button class="btn js-restart-btn">
 RESTART
@@ -104,7 +102,10 @@ RESTART
 }
 
 function generateAnswerChoiceHTML(answerChoice) {
-  let feedback = null;
+  let feedback = '';
+  let required = store.answered ? '' : 'required';
+  let disabled = store.answered ? 'disabled' : '';
+
   if (store.answered === true) {
     if (store.answerChoice === answerChoice) {
       feedback = store.correct ? '<div class="correct">Correct!</div>' : '<div class="incorrect">Incorrect!</div>';
@@ -112,14 +113,13 @@ function generateAnswerChoiceHTML(answerChoice) {
   }
   return `<div id="option-container-a">
   <label for="a" />
-  <input name="answerChoice" value=${answerChoice} id="a" type="radio">${answerChoice}
+  <input ${disabled} ${required} name="answerChoice" value=${answerChoice} id="a" type="radio">${answerChoice}
   ${feedback}
 </div>`;
 }
 
 function generateQuestionsHTML() {
   let q = store.questions.find(q => q.id === store.questionNumber);
-  store.currentCorrectAnswer = q.correctAnswer;
 
   let btnContent = store.answered ? 'Next' : 'Submit'
 
@@ -137,29 +137,38 @@ function generateQuestionsHTML() {
 }
 
 function handleSubmitClick() {
+  let answerChoice = $('input[name=answerChoice]:checked').val();
+
+  store.answered = true;
+  store.answerChoice = answerChoice;
+
+  let question = store.questions.find(q => q.id === store.questionNumber);
+
+  if (question.correctAnswer === answerChoice) { // user got correct answer
+    store.correct = true;
+    store.score++;
+  } else { // user got incorrect answer
+    store.correct = false;
+  }
+}
+
+function handleNextClick() {
+  store.questionNumber++;
+  store.answered = false;
+  store.correct = null;
+  store.answerChoice = null;
+}
+
+function handleButtonClick() {
   $('main').on('submit', '#main-form', e => {
     e.preventDefault();
-    console.log('user clicked submit button');
-    let answerChoice = $('input[name=answerChoice]:checked').val();
-    console.log(answerChoice);
 
-    let question = store.questions.find(q => q.id === store.questionNumber);
-
-    if (question.correctAnswer === answerChoice) {
-      store.correct = true;
-    } else {
-      store.correct = false;
-    }
-
-    console.log($(e.currentTarget).find('button').text());
     if ($(e.currentTarget).find('button').text().trim() === 'Submit') { // submit button pressed
-      store.answered = true;
-      let answerChoice = $('input[name=answerChoice]:checked').val();
-      store.answerChoice = answerChoice;
+      // update store to reflect the fact the user answered
+      handleSubmitClick();
+
     } else { //next button pressed
-      store.questionNumber++;
-      store.answered = false;
-      store.correct = null;
+      handleNextClick();
     }
 
     render();
@@ -170,7 +179,6 @@ function handleSubmitClick() {
 // When user clicks start button, set quiz started to true, update question number, re-render
 function handleStartClick() {
   $('main').on('click', '.js-start-btn', e => {
-    store.quizStarted = true;
     store.questionNumber = 1;
     render();
   });
@@ -198,6 +206,7 @@ function handleRestartClick() {
     store.quizStarted = false;
     store.answered = false;
     store.correct = null;
+    store.answerChoice = null;
     render();
   });
 }
@@ -205,7 +214,7 @@ function handleRestartClick() {
 function handleQuizApp() {
   render();
   handleStartClick(); // event listeners 
-  handleSubmitClick();
+  handleButtonClick();
   handleRestartClick();
 }
 
