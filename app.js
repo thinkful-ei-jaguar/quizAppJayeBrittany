@@ -105,15 +105,17 @@ function generateAnswerChoiceHTML(answerChoice) {
   let feedback = '';
   let required = store.answered ? '' : 'required';
   let disabled = store.answered ? 'disabled' : '';
+  let id = Math.random();
 
   if (store.answered === true) {
     if (store.answerChoice === answerChoice) {
       feedback = store.correct ? '<div class="correct">Correct!</div>' : '<div class="incorrect">Incorrect!</div>';
     }
   }
+
   return `<div id="option-container-a">
-  <label for="a" />
-  <input ${disabled} ${required} name="answerChoice" value=${answerChoice} id="a" type="radio">${answerChoice}
+  <label for=${id}>${answerChoice}</label>
+  <input ${disabled} ${required} name="answerChoice" value=${answerChoice} id=${id} type="radio">
   ${feedback}
 </div>`;
 }
