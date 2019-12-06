@@ -105,25 +105,28 @@ function generateAnswerChoiceHTML(answerChoice) {
   let feedback = '';
   let required = store.answered ? '' : 'required';
   let disabled = store.answered ? 'disabled' : '';
-  let id = Math.random();
+  <
+    let currentQ= store.questions.find(q => q.id === store.questionNumber);
+  let correct = currentQ.correctAnswer;
+  const randID = Math.random();
 
   if (store.answered === true) {
     if (store.answerChoice === answerChoice) {
-      feedback = store.correct ? '<div class="correct">Correct!</div>' : '<div class="incorrect">Incorrect!</div>';
+      feedback = store.correct ? '<div class="correct">Correct!</div>' : `<div class="incorrect">Incorrect! The correct answer is ${correct}</div>`;
     }
   }
 
+
   return `<div id="option-container-a">
-  <label for=${id}>${answerChoice}</label>
-  <input ${disabled} ${required} name="answerChoice" value=${answerChoice} id=${id} type="radio">
+  <input ${disabled} ${required} name="answerChoice" value=${answerChoice} id=${randID} type="radio"> 
   ${feedback}
-</div>`;
+  <label for=${randID}> ${answerChoice} </label>
+  </div>`;
 }
 
 function generateQuestionsHTML() {
   let q = store.questions.find(q => q.id === store.questionNumber);
-
-  let btnContent = store.answered ? 'Next' : 'Submit'
+  let btnContent = store.answered ? 'Next' : 'Submit';
 
   return `<form id="main-form" action="">
   <fieldset>
@@ -136,6 +139,15 @@ function generateQuestionsHTML() {
       </button>
   </fieldset>
 </form>`;
+}
+
+function generateScoreQuestion() {
+  return `<section class="score-box">
+  <p>Question:
+      <span class="js-question-number"> ${store.questionNumber} </span>/5</p>
+  <p>Score:
+      <span class="js-score">${store.score}</span>/5</p>
+</section>`;
 }
 
 function handleSubmitClick() {
@@ -193,6 +205,7 @@ function render() {
   if (store.questionNumber === 0) {
     html += generateStarterHTML();
   } else if (store.questionNumber > 0 && store.questionNumber <= 5) {
+    html += generateScoreQuestion();
     html += generateQuestionsHTML();
   } else {
     html += generateResultsPage();
