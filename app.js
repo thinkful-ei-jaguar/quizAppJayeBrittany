@@ -157,7 +157,7 @@ function handleSubmitClick() {
     if (question.correctAnswer === answerChoice) {
       html += generateFeedbackHTML('correct');
     } else {
-      html += generateFeedbacktHTML('incorrect');
+      html += generateFeedbackHTML('incorrect');
     }
     // APPEND FEEDBACK DIV TO SELECTED ANSWER CHOICE
     let targetedDiv =
@@ -190,9 +190,9 @@ function render() {
   // cond
   let html = '';
 
-  if (state.questionNumber === 0) {
+  if (store.questionNumber === 0) {
     html += generateStarterHTML();
-  } else if (state.questionNumber > 0 && state.questionNumber <= 5) {
+  } else if (store.questionNumber > 0 && store.questionNumber <= 5) {
     html += generateQuestionHTML();
   } else {
     html += generateResultsPage();
