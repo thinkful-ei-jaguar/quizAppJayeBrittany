@@ -90,7 +90,7 @@ function generateStarterHTML() {
 
 function generateResultsPage() {
   return `<header>
-  Results
+  <h1>Results</h1>
 </header>
 <section>
 <p>Your Score:
@@ -129,7 +129,7 @@ function generateQuestionsHTML() {
   return `<form id="main-form" action="">
   <fieldset>
       <legend>
-          ${q.question}
+          <h1>${q.question}</h1>
       </legend>
       ${q.answers.map(a => generateAnswerChoiceHTML(a))}
       <button type="submit" value="submit" class="js-next-submit-btn">
