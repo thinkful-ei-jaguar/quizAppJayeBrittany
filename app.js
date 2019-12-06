@@ -160,8 +160,8 @@ function handleSubmitClick() {
       html += generateFeedbacktHTML('incorrect');
     }
     // APPEND FEEDBACK DIV TO SELECTED ANSWER CHOICE
-
-    render();
+    let targetedDiv =
+      render();
 
   });
 
@@ -199,6 +199,15 @@ function render() {
   }
 
   $('main').html(html);
+}
+
+function handleRestartClick() {
+  $('main').on('click', '.js-restart-btn', e => {
+    store.questionNumber = 0;
+    store.score = 0;
+    store.quizStarted = false;
+    render();
+  });
 }
 
 function handleQuizApp() {
