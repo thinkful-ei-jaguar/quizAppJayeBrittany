@@ -96,21 +96,23 @@ function generateResultsPage() {
 <p>Your Score:
 <span class="final-score">${store.score}</span>/5</p>
 </section>
-<button class="btn js-restart-btn">
-RESTART
-</button>`;
+${generateRestartButtonHTML}`;
+}
+
+function generateRestartButtonHTML() {
+  return `<button class="btn js-restart-btn">
+  RESTART
+  </button>`;
 }
 
 function generateAnswerChoiceHTML(answerChoice) {
   let feedback = '';
   let required = store.answered ? '' : 'required';
   let disabled = store.answered ? 'disabled' : '';
-<<<<<<< HEAD
+
 
   let currentQ = store.questions.find(q => q.id === store.questionNumber);
-=======
-  let currentQ= store.questions.find(q => q.id === store.questionNumber);
->>>>>>> f623895ab3769230951cd345d21aaa7d91768e10
+
   let correct = currentQ.correctAnswer;
   const randID = Math.random();
 
