@@ -105,12 +105,8 @@ function generateAnswerChoiceHTML(answerChoice) {
   let feedback = '';
   let required = store.answered ? '' : 'required';
   let disabled = store.answered ? 'disabled' : '';
-<<<<<<< HEAD
 
   let currentQ = store.questions.find(q => q.id === store.questionNumber);
-=======
-  let currentQ= store.questions.find(q => q.id === store.questionNumber);
->>>>>>> f623895ab3769230951cd345d21aaa7d91768e10
   let correct = currentQ.correctAnswer;
   const randID = Math.random();
 
@@ -122,14 +118,9 @@ function generateAnswerChoiceHTML(answerChoice) {
 
 
   return `<div id="option-container-a">
-<<<<<<< HEAD
   <input ${disabled} ${required} name="answerChoice" value="${answerChoice}" id="${randID}" type="radio"> 
   ${feedback}
   <label for="${randID}">${answerChoice}</label>
-=======
-  <input ${disabled} ${required} name="answerChoice" value=${answerChoice} id=${randID} type="radio"> 
-  <label for=${randID}> ${answerChoice} ${feedback}</label>
->>>>>>> f623895ab3769230951cd345d21aaa7d91768e10
   </div>`;
 }
 
@@ -142,13 +133,7 @@ function generateQuestionsHTML() {
       <legend>
           <h1>${q.question}</h1>
       </legend>
-<<<<<<< HEAD
       ${q.answers.map(a => generateAnswerChoiceHTML(a)).join('')}
-=======
-      <div class= "answers">
-        ${q.answers.map(a => generateAnswerChoiceHTML(a))}
-      </div>
->>>>>>> f623895ab3769230951cd345d21aaa7d91768e10
       <button type="submit" value="submit" class="js-next-submit-btn">
       ${btnContent}
       </button>
