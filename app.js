@@ -92,7 +92,7 @@ function generateResultsPage() {
   return `<header>
   <h1>Results</h1>
 </header>
-<section>
+<section class = "score">
 <p>Your Score:
 <span class="final-score">${store.score}</span>/5</p>
 </section>

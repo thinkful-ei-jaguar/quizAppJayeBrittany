@@ -55,3 +55,14 @@ fieldset {
   margin-top: 10%;
 }
 
+.score-box {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-evenly;
+  
+}
+
+.score {
+  text-align: center;
+}
+
