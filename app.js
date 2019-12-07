@@ -105,8 +105,7 @@ function generateAnswerChoiceHTML(answerChoice) {
   let feedback = '';
   let required = store.answered ? '' : 'required';
   let disabled = store.answered ? 'disabled' : '';
-  <
-    let currentQ= store.questions.find(q => q.id === store.questionNumber);
+  let currentQ= store.questions.find(q => q.id === store.questionNumber);
   let correct = currentQ.correctAnswer;
   const randID = Math.random();
 
@@ -119,8 +118,7 @@ function generateAnswerChoiceHTML(answerChoice) {
 
   return `<div id="option-container-a">
   <input ${disabled} ${required} name="answerChoice" value=${answerChoice} id=${randID} type="radio"> 
-  ${feedback}
-  <label for=${randID}> ${answerChoice} </label>
+  <label for=${randID}> ${answerChoice} ${feedback}</label>
   </div>`;
 }
 
@@ -133,7 +131,9 @@ function generateQuestionsHTML() {
       <legend>
           <h1>${q.question}</h1>
       </legend>
-      ${q.answers.map(a => generateAnswerChoiceHTML(a))}
+      <div class= "answers">
+        ${q.answers.map(a => generateAnswerChoiceHTML(a))}
+      </div>
       <button type="submit" value="submit" class="js-next-submit-btn">
       ${btnContent}
       </button>
@@ -205,8 +205,8 @@ function render() {
   if (store.questionNumber === 0) {
     html += generateStarterHTML();
   } else if (store.questionNumber > 0 && store.questionNumber <= 5) {
-    html += generateScoreQuestion();
     html += generateQuestionsHTML();
+    html += generateScoreQuestion();
   } else {
     html += generateResultsPage();
   }
