@@ -105,7 +105,8 @@ function generateAnswerChoiceHTML(answerChoice) {
   let feedback = '';
   let required = store.answered ? '' : 'required';
   let disabled = store.answered ? 'disabled' : '';
-  let currentQ = store.questions.find(q => q.id === store.questionNumber);
+  <
+    let currentQ= store.questions.find(q => q.id === store.questionNumber);
   let correct = currentQ.correctAnswer;
   const randID = Math.random();
 
@@ -114,7 +115,8 @@ function generateAnswerChoiceHTML(answerChoice) {
       feedback = store.correct ? '<div class="correct">Correct!</div>' : `<div class="incorrect">Incorrect! The correct answer is ${correct}</div>`;
     }
   }
-  
+
+
   return `<div id="option-container-a">
   <input ${disabled} ${required} name="answerChoice" value=${answerChoice} id=${randID} type="radio"> 
   ${feedback}
@@ -139,7 +141,7 @@ function generateQuestionsHTML() {
 </form>`;
 }
 
-function generateScoreQuestion(){
+function generateScoreQuestion() {
   return `<section class="score-box">
   <p>Question:
       <span class="js-question-number"> ${store.questionNumber} </span>/5</p>
