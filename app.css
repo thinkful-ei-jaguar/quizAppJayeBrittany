@@ -7,7 +7,6 @@
   *
 */
 
-
 * {
   box-sizing: border-box;
 }
@@ -21,8 +20,10 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
-  padding: 5px;
-  padding-left: 3%;
+}
+
+h1 {
+  text-align: center;
 }
 
 fieldset {
@@ -31,6 +32,7 @@ fieldset {
 
 .answers {
   font-size: 24px;
+  padding-left: 10%;
 }
 
 .correct, .incorrect {
@@ -47,16 +49,10 @@ fieldset {
   color: red;
 }
 
-/*
-I wanted to bottom align the score box but I cant for the life of me figure it out
-*/
-.score-box {
-
+.btn {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+  margin-top: 5%;
 }
 
-/*
-I want to horizontally center this button out
-*/
-.js-next-submit-btn {
-
-}
