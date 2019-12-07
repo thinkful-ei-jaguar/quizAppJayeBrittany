@@ -119,7 +119,7 @@ function generateAnswerChoiceHTML(answerChoice) {
 
   return `<div id="option-container-a">
   <input ${disabled} ${required} name="answerChoice" value="${answerChoice}" id="${randID}" type="radio"> 
-  <label for="${randID}">${answerChoice} ${feedback}</label>
+  <label for="${randID}" class = "answerChoice">${answerChoice} ${feedback}</label>
   </div>`;
 }
 

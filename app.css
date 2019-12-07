@@ -20,10 +20,15 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
+  background-image: url(kim.jpg);
+  background-size: 400px;
+  background-position: center;
+  background-repeat: no-repeat;
 }
 
 h1 {
   text-align: center;
+  color: deeppink;
 }
 
 fieldset {
@@ -33,6 +38,14 @@ fieldset {
 .answers {
   font-size: 24px;
   padding-left: 10%;
+}
+
+.answerChoice:hover {
+  color: #8080ff;
+}
+
+input[type=radio]:focus + label{
+  color: navy;
 }
 
 .correct, .incorrect {
@@ -53,13 +66,35 @@ fieldset {
   margin-right: auto;
   margin-left: auto;
   margin-top: 10%;
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  background-color: pink;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.btn:focus, .btn:hover {
+  background-color: deeppink;
+}
+
+.btn:active {
+  background-color: pink;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
 }
 
 .score-box {
   display: flex;
   align-items: flex-end;
   justify-content: space-evenly;
-  
+  font-size: 24px;
+  color: navy;
+  bottom: 10px;
 }
 
 .score {
