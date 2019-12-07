@@ -119,8 +119,7 @@ function generateAnswerChoiceHTML(answerChoice) {
 
   return `<div id="option-container-a">
   <input ${disabled} ${required} name="answerChoice" value="${answerChoice}" id="${randID}" type="radio"> 
-  ${feedback}
-  <label for="${randID}">${answerChoice}</label>
+  <label for="${randID}">${answerChoice} ${feedback}</label>
   </div>`;
 }
 
@@ -133,7 +132,9 @@ function generateQuestionsHTML() {
       <legend>
           <h1>${q.question}</h1>
       </legend>
+      <div class = answers>
       ${q.answers.map(a => generateAnswerChoiceHTML(a)).join('')}
+      </div>
       <button type="submit" value="submit" class="btn js-next-submit-btn">
       ${btnContent}
       </button>

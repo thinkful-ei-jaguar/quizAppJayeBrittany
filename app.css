@@ -38,7 +38,6 @@ fieldset {
 .correct, .incorrect {
   padding-left: 20px;
   padding-top: 5px;
-  padding-bottom: 5px;
 }
 
 .correct{
@@ -53,6 +52,6 @@ fieldset {
   display: block;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 5%;
+  margin-top: 10%;
 }
 
