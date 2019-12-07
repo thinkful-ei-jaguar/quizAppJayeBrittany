@@ -134,7 +134,7 @@ function generateQuestionsHTML() {
           <h1>${q.question}</h1>
       </legend>
       ${q.answers.map(a => generateAnswerChoiceHTML(a)).join('')}
-      <button type="submit" value="submit" class="js-next-submit-btn">
+      <button type="submit" value="submit" class="btn js-next-submit-btn">
       ${btnContent}
       </button>
   </fieldset>
