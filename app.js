@@ -97,12 +97,11 @@ function generateResultsPage() {
 <section>
 <p>Your Score:
 <span class="final-score">${store.score}</span>/5</p>
-</section>
-${generateRestartButtonHTML}`;
+</section>${generateRestartButtonHTML}`;
 }
 
 function generateRestartButtonHTML() {
-  return `<button class="btn js-restart-btn">
+  return `<button class="btn start-btn js-restart-btn">
   RESTART
   </button>`;
 }
@@ -122,16 +121,16 @@ function generateAnswerChoiceHTML(answerChoice) {
 
   if (store.answered === true) {
     if (store.answerChoice === answerChoice) {
-      feedback = store.correct ? '<div class="correct">Correct!</div>' : `<div class="incorrect">Incorrect! The correct answer is ${correct}</div>`;
+      feedback = store.correct ? '<div class="correct feedback">Correct!</div>' : `<div class="incorrect feedback">Incorrect! The correct answer is ${correct}</div>`;
     }
   }
 
 
-  return `<div id="option-container-a">
+  return `<div class="option-container">
 
 
   <input ${disabled} ${required} name="answerChoice" value="${answerChoice}" id="${randID}" type="radio"> 
-  <label for="${randID}"> ${answerChoice} ${feedback}</label>
+  <label class="answerChoice" for="${randID}"> ${answerChoice} ${feedback}</label>
 
   </div>`;
 }
