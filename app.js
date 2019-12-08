@@ -84,26 +84,18 @@ const store = {
 function generateStarterHTML() {
   return `<header class="starting-header">
   <h1>How Big of a Kardashian Fan Are You?</h1>
-  <p>Think you know the Kardashians? Take this Quiz to test your knowledge.</p>
-  <p>CLICK THE BUTTON BELOW TO GET STARTED</p>
+  <p class="primary">Think you know the Kardashians? Take this <span class="quiz">Quiz</span> to test your knowledge!</p>
+  <p class="secondary">CLICK THE BUTTON BELOW TO GET STARTED!</p>
 </header>
 <button class="btn start-btn js-start-btn">BEGIN</button>`;
 }
 
 function generateResultsPage() {
-  return `<header>
-  <h1>Results</h1>
-</header>
-<section>
-<p>Your Score:
-<span class="final-score">${store.score}</span>/5</p>
-</section>${generateRestartButtonHTML}`;
+  return `<header><h2>Results</h2></header><section><p class="score">Your Score:<span class="final-score">${store.score}</span>/5</p>${generateRestartButtonHTML}`;
 }
 
 function generateRestartButtonHTML() {
-  return `<button class="btn start-btn js-restart-btn">
-  RESTART
-  </button>`;
+  return `<button class="btn start-btn js-restart-btn">RETAKE?</button>`;
 }
 
 function generateAnswerChoiceHTML(answerChoice) {

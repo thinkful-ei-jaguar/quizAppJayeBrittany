@@ -148,7 +148,9 @@ main {
   border: 5px solid deeppink;
     border-radius: 2%; 
 }
-
+h1, h2, p {
+  text-align: center; 
+}
 h2 {
   font-size: 2rem; 
   font-family: 'Gupter', serif;
@@ -173,12 +175,23 @@ h2 {
 } */
 
 h1 {
-  position: absolute;
+  margin: 0 auto;
   color: deeppink;
-  top: .01%;
-  left: 8%;
+  font-family: 'Gupter', serif; 
 }
-
+p.primary {
+  color: #4d4d4d;
+}
+p.secondary {
+  text-transform: uppercase;
+  font-weight: bold;
+  font-family: 'Gupter', serif; 
+  font-size: 1.4rem; 
+}
+span.quiz {
+  font-weight: bold; 
+  text-transform: uppercase;
+}
 fieldset {
   border: none;
   display: flex;
@@ -266,14 +279,23 @@ input[type=radio]:focus + label{
   font-size: larger; 
 }
 
-.score {
-  margin-left: 20%;
-}
-
 .finalScore {
   margin-left: 30%;
   position: absolute;
   top: 45%;
+}
+p.score {
+  text-align: center;
+  font-weight: bolder;
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  font-family: 'Gupter', serif; 
+  color: #4d4d4d;
+}
+.final-score {
+  color: goldenrod;
+  font-weight: bold;
+  font-size: 2rem; 
 }
 
 /**********
