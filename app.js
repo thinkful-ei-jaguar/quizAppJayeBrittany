@@ -162,9 +162,9 @@ function generateQuestionsHTML() {
 function generateScoreQuestion() {
   return `<section class="score-box">
   <p>Question:
-      <span class="js-question-number">${store.questionNumber}</span>/5</p>
+      <span class="current js-question-number">${store.questionNumber}</span>/5</p>
   <p>Score:
-      <span class="js-score">${store.score}</span>/${store.questions.length}</p>
+      <span class="current js-score">${store.score}</span>/${store.questions.length}</p>
 </section>`;
 }
 

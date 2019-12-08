@@ -144,10 +144,16 @@ main {
   display: flex;
   flex-direction: column; 
   padding: 2%; 
+  background-color: #FFEBCD; 
+  border: 5px solid deeppink;
+    border-radius: 2%; 
 }
 
 h2 {
   font-size: 2rem; 
+  font-family: 'Gupter', serif;
+  color: deeppink;
+  font-weight: bold; 
 }
 
 /* .background{
@@ -177,6 +183,13 @@ fieldset {
   border: none;
   display: flex;
   flex-direction: column; 
+  max-width: 100%; 
+  margin: 0 auto; 
+}
+
+fieldset legend {
+  flex-basis: 0;
+  flex-grow: 1; 
 }
 
 /* .answers {
@@ -247,6 +260,11 @@ input[type=radio]:focus + label{
   border-radius: 5%; 
   text-align: center; 
 }
+.current {
+  color: deeppink;
+  font-weight: bold;
+  font-size: larger; 
+}
 
 .score {
   margin-left: 20%;
@@ -262,6 +280,21 @@ input[type=radio]:focus + label{
 * MEDIA QUERIES
 ***********/
 
+/**VERY SMALL SCREENS*/
+
+@media only screen and (max-width: 367px) {
+  .container-main {
+    border: none; 
+    background-color: none;  
+  }
+  
+fieldset legend {
+  flex-basis: 0;
+  flex-grow: 1; 
+  flex-shrink: 1; 
+}
+}
+
 /** IPADS***/
 @media only screen and (min-width : 768px) and (max-width : 1024px) {
   body {
@@ -269,8 +302,12 @@ input[type=radio]:focus + label{
   }
   .container-main {
     max-width: 60%;
-    padding: 1%; 
-    border: 1px solid grey; 
+    padding: 2px; 
+    border: 5px solid deeppink;
+    border-radius: 2%; 
+  }
+  h2 {
+    max-width: 100%;
   }
   .btn {
     font-size: larger;
@@ -289,7 +326,9 @@ input[type=radio]:focus + label{
   /* Styles */
   .container-main {
     max-width: 40%; 
-    border: 1px solid grey; 
+    border: 5px solid deeppink;
+    border-radius: 2%;  
+    padding: 1%; 
   }
   .btn {
     width: 80%; 
