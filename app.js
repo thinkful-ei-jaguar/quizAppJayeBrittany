@@ -111,7 +111,9 @@ function generateAnswerChoiceHTML(answerChoice) {
   let disabled = store.answered ? 'disabled' : '';
 
 
+
   let currentQ = store.questions.find(q => q.id === store.questionNumber);
+
 
   let correct = currentQ.correctAnswer;
   const randID = Math.random();
@@ -150,6 +152,7 @@ function generateQuestionsHTML() {
 
       <button type="submit" value="submit" class="js-next-submit-btn">
       ${btnContent}
+
       </button>
   </fieldset>
 </form>`;
