@@ -1,4 +1,4 @@
-/* Your styles should be mobile-first and responsive */
+/* Your styles should be mobile-first and responsive
 
 /** 
   * If you are unclear on how to utilize a mobile-first, responsive technique to write your CSS, here is an example: 
@@ -12,7 +12,7 @@
 
 */
 
-* {
+/* * {
   box-sizing: border-box;
 }
 
@@ -96,7 +96,7 @@ fieldset {
 /*****
 * STARTING PAGE
 *****/
-.starting-header {
+/* .starting-header {
   display: flex; 
   flex-direction: column; 
 }
@@ -104,6 +104,197 @@ fieldset {
 header h1 {
   font-family: 'Gupter', serif;
   font-weight: 700; 
+} */
+
+
+/* Your styles should be mobile-first and responsive */
+
+/** 
+  * If you are unclear on how to utilize a mobile-first, responsive technique to write your CSS, here is an example: 
+  *
+  * https://github.com/andreacardybailey/responsive_example/blob/master/styles/responsive-base.css 
+  *
+*/
+
+* {
+  box-sizing: border-box;
 }
+html {
+  font-size: 24px;
+  margin: 0;
+  padding: 0; 
+}
+
+body {
+  position: relative;
+  font-family: 'Baskervville', sans-serif;
+  max-width: 100vw;
+  height: auto; 
+  /* margin-left: auto;
+  margin-right: auto;
+  margin-top: 50px; */
+}
+main {
+  max-width: 100%; 
+}
+
+.container-main {
+  max-width: 80%; 
+  margin: 2% auto; 
+  display: flex;
+  flex-direction: column; 
+  padding: 2%; 
+}
+
+h2 {
+  font-size: 2rem; 
+}
+
+/* .background{
+  position: relative;
+  width: 396px;
+  height: 596px;
+  background-color: #d8ecf3;
+  opacity: 50%;
+  border-radius: 10px;
+} */
+
+/* img {
+  position: absolute;
+  top: 30%;
+  opacity: 50%;
+  width: 398px;
+} */
+
+h1 {
+  position: absolute;
+  color: deeppink;
+  top: .01%;
+  left: 8%;
+}
+
+fieldset {
+  border: none;
+  display: flex;
+  flex-direction: column; 
+}
+
+/* .answers {
+  position: absolute;
+  padding-left: 10%;
+  top: 40%;
+} */
+.option-container {
+  margin-bottom: 1%; 
+  line-height: 1.5; 
+  font-weight: bolder; 
+}
+
+.answerChoice {
+  font-size: 1.4rem; 
+}
+
+.answerChoice:hover {
+  color: #8080ff;
+}
+
+input[type=radio]:focus + label{
+  color: navy;
+}
+
+.correct, .incorrect {
+  /* padding-left: 20px;
+  padding-top: 3px; */
+}
+
+.correct{
+  color: green;
+}
+
+.incorrect{
+  color: red;
+}
+
+.btn {
+  margin: 1% auto 5%; 
+  padding: 15px 25px;
+  font-size: 24px;
+  text-align: center;
+  cursor: pointer;
+  outline: none;
+  color: black;
+  background-color: pink;
+  border: none;
+  border-radius: 15px;
+  box-shadow: 0 9px #999;
+}
+
+.btn:focus, .btn:hover {
+  background-color: deeppink;
+}
+
+.btn:active {
+  background-color: pink;
+  box-shadow: 0 5px #666;
+  transform: translateY(4px);
+}
+
+.score-box {
+  background-color: lightgrey;
+  padding: 2%;
+  margin: 5px auto;
+  border: 1px solid lightgrey;
+  border-radius: 5%; 
+  text-align: center; 
+}
+
+.score {
+  margin-left: 20%;
+}
+
+.finalScore {
+  margin-left: 30%;
+  position: absolute;
+  top: 45%;
+}
+
+/**********
+* MEDIA QUERIES
+***********/
+
+/** IPADS***/
+@media only screen and (min-width : 768px) and (max-width : 1024px) {
+  body {
+    font-size: larger; 
+  }
+  .container-main {
+    max-width: 60%;
+    padding: 1%; 
+    border: 1px solid grey; 
+  }
+  .btn {
+    font-size: larger;
+    width: 80%;
+    padding: 5%; 
+  }
+  .answers {
+    margin-bottom: 5px; 
+  }
+  .answerChoice {
+    font-size: 2rem; 
+  }
+}
+
+@media only screen and (min-width : 1025px) {
+  /* Styles */
+  .container-main {
+    max-width: 40%; 
+    border: 1px solid grey; 
+  }
+  .btn {
+    width: 80%; 
+    margin-top: 2%; 
+  }
+  }
 
 
