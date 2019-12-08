@@ -7,6 +7,11 @@
   *
 */
 
+/* restart button color: #1ce652 
+  restart button hover color: #18c245
+
+*/
+
 * {
   box-sizing: border-box;
 }
@@ -50,9 +55,44 @@ fieldset {
 }
 
 .btn {
-  display: block;
-  margin-right: auto;
-  margin-left: auto;
-  margin-top: 5%;
+  background-color: gold; 
+  border: 1px solid gold; 
+  padding: 5%;
+  text-transform: uppercase; 
+  margin: 0 auto; 
+  border-radius: 10%; 
+  cursor: pointer;
+  -webkit-box-shadow: 6px 9px 14px -5px rgba(0,0,0,0.75);
+  -moz-box-shadow: 6px 9px 14px -5px rgba(0,0,0,0.75);
+  box-shadow: 6px 9px 14px -5px rgba(0,0,0,0.75);
 }
+
+.btn:hover {
+  background-color: rgba(255, 217, 0, 0.61);
+}
+
+.start-btn {
+  background-color: #1ce652;
+  border: 1px solid #1ce652;
+}
+
+.start-btn:hover {
+    background-color: #18c245; 
+    transform: translateX(5px) translateY(5px);
+}
+
+
+/*****
+* STARTING PAGE
+*****/
+.starting-header {
+  display: flex; 
+  flex-direction: column; 
+}
+
+header h1 {
+  font-family: 'Gupter', serif;
+  font-weight: 700; 
+}
+
 

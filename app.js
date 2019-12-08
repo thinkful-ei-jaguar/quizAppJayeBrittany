@@ -82,10 +82,12 @@ const store = {
  *
  */
 function generateStarterHTML() {
-  return `<header>
-  <h1>Test Your Knowledge</h1>
+  return `<header class="starting-header">
+  <h1>How Big of a Kardashian Fan Are You?</h1>
+  <p>Think you know the Kardashians? Take this Quiz to test your knowledge.</p>
+  <p>CLICK THE BUTTON BELOW TO GET STARTED</p>
 </header>
-<button class="btn js-start-btn">START</button>`;
+<button class="btn start-btn js-start-btn">BEGIN</button>`;
 }
 
 function generateResultsPage() {
@@ -150,7 +152,7 @@ function generateQuestionsHTML() {
         ${q.answers.map(a => generateAnswerChoiceHTML(a)).join('')}
       </div>
 
-      <button type="submit" value="submit" class="js-next-submit-btn">
+      <button type="submit" value="submit" class="btn js-next-submit-btn">
       ${btnContent}
 
       </button>
@@ -228,7 +230,7 @@ function render() {
     html += generateResultsPage();
   }
 
-  $('main').html(html);
+  $('.container-main').html(html);
 }
 
 function handleRestartClick() {
