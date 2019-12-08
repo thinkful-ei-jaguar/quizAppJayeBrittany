@@ -92,7 +92,8 @@ function generateStarterHTML() {
 }
 
 function generateResultsPage() {
-  return `<section class="results-page"><h2>Results</h2><p class="score">Your Score:<span class="final-score">${store.score}</span>/5</p>${generateRestartButtonHTML()}</section>`;
+  return `<section class="results-page"><h2>Results</h2><p class="score">Your Score: <span class="final-score">${store.score}</span>/5</p><img src="./assets/images/giphy.gif" alt="Kim Kardashian gif"/>
+  ${generateRestartButtonHTML()}</section>`;
 }
 
 function generateRestartButtonHTML() {

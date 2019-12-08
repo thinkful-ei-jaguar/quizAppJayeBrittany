@@ -258,6 +258,7 @@ input[type=radio]:focus + label{
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
+  font-family: 'Gupter', serif; 
 }
 
 .btn:focus, .btn:hover {
@@ -326,7 +327,14 @@ img {
 img:nth-of-type(2) {
   display: none; 
 }
-
+.results-page {
+  text-align: center; 
+}
+.results-page img {
+  margin: 0 auto; 
+  width: 50%;
+  height: auto;
+}
 /**********
 * MEDIA QUERIES
 ***********/
@@ -370,7 +378,7 @@ fieldset legend {
   }
   .container-main {
     max-width: 90%;
-    padding: 2px; 
+    padding: 5px; 
     border: 5px solid deeppink;
     border-radius: 2%; 
   }
