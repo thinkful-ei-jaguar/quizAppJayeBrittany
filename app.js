@@ -144,11 +144,9 @@ function generateQuestionsHTML() {
 
 function generateScoreQuestion() {
   return `<section class="score-box">
-  <p>Question:
-      <span class="js-question-number"> ${store.questionNumber} </span>/5</p>
-  <p>Score:
-      <span class="js-score">${store.score}</span>/5</p>
-</section>`;
+  <p>Question:<span class="js-question-number">${store.questionNumber}</span>/5 </p>          
+  <p class="score">Score:<span class="js-score">${store.score}</span>/5</p>
+  </section>`;
 }
 
 function handleSubmitClick() {

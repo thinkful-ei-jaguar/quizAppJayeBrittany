@@ -12,6 +12,7 @@
 }
 
 body {
+  position: relative;
   font-family: 'Baskervville', sans-serif;
   width: 400px;
   height: 600px;
@@ -20,10 +21,13 @@ body {
   margin-left: auto;
   margin-right: auto;
   margin-top: 50px;
-  background-image: url(kim.jpg);
-  background-size: 400px;
-  background-position: center;
-  background-repeat: no-repeat;
+}
+
+img {
+  position: absolute;
+  top: 25%;
+  opacity: 50%;
+  width: 398px;
 }
 
 h1 {
@@ -36,6 +40,7 @@ fieldset {
 }
 
 .answers {
+  position: absolute;
   font-size: 24px;
   padding-left: 10%;
 }
@@ -62,10 +67,12 @@ input[type=radio]:focus + label{
 }
 
 .btn {
-  display: block;
+  display: flex;
+  position: absolute;
   margin-right: auto;
   margin-left: auto;
-  margin-top: 10%;
+  bottom: 30%;
+  left: 46%;
   padding: 15px 25px;
   font-size: 24px;
   text-align: center;
@@ -76,6 +83,7 @@ input[type=radio]:focus + label{
   border: none;
   border-radius: 15px;
   box-shadow: 0 9px #999;
+  
 }
 
 .btn:focus, .btn:hover {
@@ -90,11 +98,15 @@ input[type=radio]:focus + label{
 
 .score-box {
   display: flex;
-  align-items: flex-end;
-  justify-content: space-evenly;
+  position: absolute;
+  left: 12%;
+  bottom: 2%;
   font-size: 24px;
   color: navy;
-  bottom: 10px;
+}
+
+.score{
+  margin-left: 20%;
 }
 
 .score {
