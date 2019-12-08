@@ -40,7 +40,7 @@ const store = {
     },
     {
       id: 4,
-      question: 'Which of these Kardashian/Jenners has NOT gotten their own spin-off show on E?',
+      question: 'Which of the following have NOT gotten their own spin-off show on E?',
       answers: [
         'Khloe', // Khloe & Lamar
         'Kim',
@@ -92,7 +92,7 @@ function generateResultsPage() {
   return `<header>
   <h1>Results</h1>
 </header>
-<section class = "score">
+<section class = "finalScore">
 <p>Your Score:
 <span class="final-score">${store.score}</span>/5</p>
 </section>
