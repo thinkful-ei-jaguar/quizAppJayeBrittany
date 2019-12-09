@@ -59,6 +59,17 @@ const store = {
         'Kris'
       ],
       correctAnswer: 'Kim' // 153 vs 152
+    },
+    {
+      id: 6,
+      question: "Which of these is not a name of one of Kim & Kanye's kids?",
+      answers: [
+        'South',
+        'Psalm',
+        'North',
+        'West'
+      ],
+      correctAnswer: 'South' // 153 vs 152
     }
 
   ],
@@ -92,7 +103,7 @@ function generateStarterHTML() {
 }
 
 function generateResultsPage() {
-  return `<section class="results-page"><h2>Results</h2><p class="score">Your Score: <span class="final-score">${store.score}</span>/5</p><img src="./assets/images/giphy.gif" alt="Kim Kardashian gif"/>
+  return `<section class="results-page"><h2>Results</h2><p class="score">Your Score: <span class="final-score">${store.score}</span>/${store.questions.length}</p><img src="./assets/images/giphy.gif" alt="Kim Kardashian gif"/>
   ${generateRestartButtonHTML()}</section>`;
 }
 
@@ -156,7 +167,7 @@ function generateQuestionsHTML() {
 function generateScoreQuestion() {
   return `<section class="score-box">
   <p>Question:
-      <span class="current js-question-number">${store.questionNumber}</span>/5</p>
+      <span class="current js-question-number">${store.questionNumber}</span>/${store.questions.length}</p>
   <p>Score:
       <span class="current js-score">${store.score}</span>/${store.questions.length}</p>
 </section>`;

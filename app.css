@@ -226,7 +226,7 @@ label {
 }
 
 .answerChoice:hover {
-  color: #8080ff;
+  color: deeppink; 
 }
 
 input[type=radio]:focus + label{
