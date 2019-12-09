@@ -227,7 +227,7 @@ function render() {
 
   if (store.questionNumber === 0) {
     html += generateStarterHTML();
-  } else if (store.questionNumber > 0 && store.questionNumber <= 5) {
+  } else if (store.questionNumber > 0 && store.questionNumber <= store.questions.length) {
     html += generateQuestionsHTML();
     html += generateScoreQuestion();
   } else {
