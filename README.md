@@ -1,2 +1,4 @@
 # quizAppJayeBrittany
-Jaye and Brittany's quiz app
+
+
+Jaye Laguardia and Brittany Saucedo's quiz app
