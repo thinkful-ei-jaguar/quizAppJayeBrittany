@@ -67,7 +67,7 @@ const store = {
         'South',
         'Psalm',
         'North',
-        'West'
+        'Saint'
       ],
       correctAnswer: 'South' // 153 vs 152
     }
