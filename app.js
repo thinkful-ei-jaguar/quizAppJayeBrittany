@@ -40,7 +40,7 @@ const store = {
     },
     {
       id: 4,
-      question: 'Which of these Kardashian/Jenners has NOT gotten their own spin-off show on E?',
+      question: 'Which of these Kar-Jenners has NOT gotten their own spin-off show on E?',
       answers: [
         'Khloe', // Khloe & Lamar
         'Kim',
