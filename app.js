@@ -95,7 +95,7 @@ const store = {
 function generateStarterHTML() {
   return `<header class="starting-header">
   <h1>How Big of a Kardashian Fan Are You?</h1>
-  <div class="main-images"><img src="./assets/images/KUWTK.jpg" alt="KUWTK"/><img src="./assets/images/KUWTK2.jpg" alt="KUWTK"/></div>
+  <div class="main-images"><img src="./assets/images/KUWTK.jpg" alt="Photo of the Kardashians"/><img src="./assets/images/KUWTK2.jpg" alt="Keeping Up With the Kardashians Photo"/></div>
   <p class="primary">Think you know the Kardashians? Take this <span class="quiz">Quiz</span> to test your knowledge!</p>
   <p class="secondary">CLICK THE BUTTON BELOW TO GET STARTED!</p>
 </header>
@@ -103,7 +103,7 @@ function generateStarterHTML() {
 }
 
 function generateResultsPage() {
-  return `<section class="results-page"><h2>Results</h2><p class="score">Your Score: <span class="final-score">${store.score}</span>/${store.questions.length}</p><img src="./assets/images/giphy.gif" alt="Kim Kardashian gif"/>
+  return `<section class="results-page"><h2>Results</h2><p class="score">Your Score: <span class="final-score">${store.score}</span>/${store.questions.length}</p><img src="./assets/images/giphy.gif" alt="gif of Kim Kardashian with a sly smile"/>
   ${generateRestartButtonHTML()}</section>`;
 }
 
